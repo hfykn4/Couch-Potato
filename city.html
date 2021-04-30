@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
 	<style>
 		*{
 		  margin: 0;
@@ -14,7 +15,7 @@
 		  justify-content: center;
 		  align-items: center;
 		  padding: 10px;
-		  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+		  background: linear-gradient(to bottom right, #66ffcc -1%, #ffcccc 86%);
 		}
 		.container{
 		  max-width: 700px;
@@ -37,7 +38,7 @@
 		  height: 3px;
 		  width: 30px;
 		  border-radius: 5px;
-		  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+		  background: linear-gradient(to bottom right, #66ffcc -1%, #ffcccc 86%);
 		}
 		.content form .user-details{
 		  display: flex;
@@ -65,21 +66,9 @@
 		  border-bottom-width: 2px;
 		  transition: all 0.3s ease;
 		}
-		.user-details .input-box input:focus,
-		.user-details .input-box input:valid{
-		  border-color: #9b59b6;
+		.user-details .input-box input:focus{
+		  border-color: #ccffff;
 		}
-		 form .gender-details .gender-title{
-		  font-size: 20px;
-		  font-weight: 500;
-		 }
-		 form .category{
-		   display: flex;
-		   width: 80%;
-		   margin: 14px 0 ;
-		   justify-content: space-between;
-		 }
-
 		 form .button{
 		   height: 45px;
 		   margin: 35px 0
@@ -95,11 +84,11 @@
 		   letter-spacing: 1px;
 		   cursor: pointer;
 		   transition: all 0.3s ease;
-		   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+		   background: linear-gradient(to bottom right, #66ffcc -1%, #ffcccc 86%);
 		 }
 		 form .button input:hover{
 		  /* transform: scale(0.99); */
-		  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+		   background: linear-gradient(to bottom right, #66ffcc -1%, #ffcccc 86%);
 		  }
 		 @media(max-width: 584px){
 		 .container{
@@ -107,9 +96,6 @@
 		}
 		form .user-details .input-box{
 			margin-bottom: 15px;
-			width: 100%;
-		  }
-		  form .category{
 			width: 100%;
 		  }
 		  .content form .user-details{
@@ -129,56 +115,58 @@
 </head>
 <body>
 	<div class="container">
-		<div class="title">Actor</div>
+		<div class="title">City</div>
 		<div class="content">
 			<form method="post">
 				<div class="user-details">
 					<div class="input-box">
-						<span class="details">Actor ID:</span>
-						<input type="text" placeholder="Enter Actor ID " name="actor_id" required>
+						<span class="details">City ID</span>
+						<input type="text" placeholder="Enter City ID" name="city_id" required>
 					</div>
 
 					<div class="input-box">
-						<span class="details">First Name</span>
-						<input type="text" placeholder="Enter First Name" name="first_name" required>
+						<span class="details">City</span>
+						<input type="text" placeholder="Enter City" name="city" required>
 					</div>
 
 					<div class="input-box">
-						<span class="details">Last Name</span>
-						<input type="text" placeholder="Enter Last Name" name="last_name" required>
-					</div>       
+						<span class="details">Country ID</span>
+						<input type="text" placeholder="Enter Country ID" name="country_id" required>
+					</div>
 				</div>
-		   
+
 				<div class="button">
-					<input type="submit" value="Insert" formaction="connect_actor.php">
-					<input type="submit" value="Delete" formaction="connect_actor_delete.php">
-					<input type="submit" value="Update" formaction="connect_actor_update.php">
+					<input type="submit" value="Insert" formaction="connect_city.php">
+					<input type="submit" value="Delete" formaction="connect_city_delete.php">
+					<input type="submit" value="Update" formaction="connect_city_update.php">
 				</div>
 			</form>
-			
-			<div class="container">
+
+			<div class = "container">
 				<div class="title">View Table</div>	
-				
 				<form method="post">
 					<div class="user-details">
 						<div class="input-box">
-							<span class="details">Search by Actor ID</span>
-							<input type="text" placeholder="Enter Actor ID" name="search1">
+							<span class="details">Search by City ID</span>
+							<input type="text" placeholder="Enter City ID" name="search1">
 						</div>
 						
 						<div class="input-box">
-							<span class="details">Search by First Name</span>
-							<input type="text" placeholder="Enter First Name" name="search2">
+							<span class="details">Search by City</span>
+							<input type="text" placeholder="Enter City" name="search2">
 						</div>
 					</div>
-					
+
 					<div class ="button">
-						<input type="submit" value="Search" formaction="connect_actor_search.php">
-						<input type="submit" value="View All" formaction="connect_actor_select.php">
+						<input type="submit" value="Search" formaction="connect_city_search.php">
+						<input type="submit" value="View All" formaction="connect_city_select.php">
 					</div>
 				</form>
 			</div>
 		</div>
-	</div>
+	  
+    </div>
+  </div>
+
 </body>
 </html>

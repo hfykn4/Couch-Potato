@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
 	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+
 	<style>
 		*{
 		  margin: 0;
@@ -9,6 +11,7 @@
 		  font-family: 'Dosis', sans-serif;
 		}
 		body{
+
 		  height: 100vh;
 		  display: flex;
 		  justify-content: center;
@@ -65,8 +68,7 @@
 		  border-bottom-width: 2px;
 		  transition: all 0.3s ease;
 		}
-		.user-details .input-box input:focus,
-		.user-details .input-box input:valid{
+		.user-details .input-box input:focus{
 		  border-color: #9b59b6;
 		}
 		 form .gender-details .gender-title{
@@ -134,7 +136,7 @@
 			<form method="post">
 				<div class="user-details">
 					<div class="input-box">
-						<span class="details">Actor ID:</span>
+						<span class="details">Actor ID</span>
 						<input type="text" placeholder="Enter Actor ID " name="actor_id" required>
 					</div>
 

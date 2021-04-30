@@ -1,0 +1,30 @@
+<?php
+$filmid = filter_input(INPUT_POST, 'film_id');
+$title = filter_input(INPUT_POST, 'title');
+$description = filter_input(INPUT_POST, 'description');
+
+$host = "jupiter.nottingham.edu.my";
+$dbusername = "hfykn4jupiter";
+$dbpassword = "NKYan@(21112001)##";
+$dbname = "hfykn4ju_cw2";
+
+// Create connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+// Check connection
+if (mysqli_connect_error()){
+	die('Connect Error ('. mysqli_connect_errno() .') '
+	. mysqli_connect_error());
+}
+
+// sql to delete a record
+$sql = "DELETE FROM film_text WHERE film_id = $filmid AND title = '$title' AND description = '$description' ";
+
+if ($conn->query($sql) === TRUE) {
+  //echo "Record deleted successfully"
+  header("Location: http://hfykn4.jupiter.nottingham.edu.my/connect_film_text_select.php?save_status=success");
+} else {
+  echo "Error deleting record: " . $conn->error;
+}
+
+mysqli_close($conn);
+?>

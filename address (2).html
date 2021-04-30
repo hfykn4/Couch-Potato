@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+  <head>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+}
+body{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(to bottom left, #cc66ff 0%, #ffff66 100%);
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom left, #cc66ff 0%, #ffff66 100%);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus{
+  border-color: #cc3399;
+}
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100px;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(to bottom left, #cc66ff 0%, #ffff66 100%);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(to bottom left, #cc66ff 0%, #ffff66 100%);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+</style>
+
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Address</div>
+    <div class="content">
+      <form method="post" >
+
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Address ID</span>
+            <input type="text" placeholder="Enter Address ID" name="address_id" required = "required">
+          </div>
+
+          <div class="input-box">
+            <span class="details">Address Line 1</span>
+            <input type="text" placeholder="Eg: 89 Loja Street" name="address" required = "required">
+          </div>
+
+          <div class="input-box">
+            <span class="details">Address 2</span>
+            <input type="text" placeholder="(Optional)" name="address2">
+          </div>
+
+ 	<div class="input-box">
+            <span class="details">District</span>
+            <input type="text" placeholder="Example: California" name="district" required = "required">
+          </div>
+
+ 	<div class="input-box">
+            <span class="details">City Id</span>
+            <input type="text" placeholder="Enter City ID" name="city_id" required = "required">
+          </div>
+       
+<div class="input-box">
+            <span class="details">Postal Code</span>
+            <input type="text" placeholder="Eg: 17886" name="postal_code">
+          </div>
+
+<div class="input-box">
+            <span class="details">Phone</span>
+            <input type="text" placeholder="Enter Phone" name="phone">
+          </div>
+
+        </div>
+   
+        <div class="button">
+          	<input type="submit" value="Insert" formaction="connect_address.php">
+		<input type="submit" value="Delete" formaction="connect_address_delete.php">
+		<input type="submit" value="Update" formaction="connect_address_update.php">
+        </div>
+      </form>
+
+<div class = "container">
+<div class="title">View Table</div>	
+
+	
+	<form method="post">
+	<div class="user-details">
+			<div class="input-box">
+			<span class="details">Search by Address ID</span>
+			<input type="text" placeholder="Enter Address ID" name="search1">
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Search by District</span>
+			<input type="text" placeholder="Enter District" name="search2">
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Search by City Id</span>
+			<input type="text" placeholder="Enter City ID" name="search3">
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Search by Postal Code</span>
+			<input type="text" placeholder="Enter Postal Code" name="search4">
+			</div>
+			
+			<div class="input-box">
+			<span class="details">Search by Phone</span>
+			<input type="text" placeholder="Enter Phone" name="search5">
+			</div>
+
+		
+	</div>	
+		<div class ="button">
+		<input type="submit" value="Search" formaction="connect_address_search.php">
+		<input type="submit" value="View All" formaction="connect_address_select.php">
+		</div>
+
+	</form>
+	</div>
+
+    </div>
+  </div>
+
+</body>
+</html>
